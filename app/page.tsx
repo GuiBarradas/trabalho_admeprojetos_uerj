@@ -72,6 +72,8 @@ export default function Home() {
     { href: "#lideranca", label: "Liderança" },
     { href: "#motivacao", label: "Motivação" },
     { href: "#riscos", label: "Riscos" },
+    { href: "#estudos-caso", label: "Estudos de Caso" },
+    { href: "#estrategias", label: "Estratégias" },
     { href: "#conclusao", label: "Conclusão" },
   ]
 
@@ -110,8 +112,13 @@ export default function Home() {
             ))}
           </nav>
           <div className="hidden md:block">
-            <Button className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 transition-all duration-300 shadow-md hover:shadow-lg">
-              Baixar Apresentação
+            <Button
+              className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 transition-all duration-300 shadow-md hover:shadow-lg"
+              asChild
+            >
+              <a href="/cultura-organizacional.pdf" download>
+                Baixar Apresentação
+              </a>
             </Button>
           </div>
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -149,7 +156,11 @@ export default function Home() {
               ))}
             </nav>
             <div className="mt-4 pt-4 border-t">
-              <Button className="w-full bg-gradient-to-r from-emerald-600 to-teal-500">Baixar Apresentação</Button>
+              <Button className="w-full bg-gradient-to-r from-emerald-600 to-teal-500" asChild>
+                <a href="/cultura-organizacional.pdf" download>
+                  Baixar Apresentação
+                </a>
+              </Button>
             </div>
           </div>
         </motion.div>
@@ -168,7 +179,7 @@ export default function Home() {
           >
             <motion.div variants={fadeInUpVariants} className="mb-4">
               <span className="inline-block px-3 py-1 text-xs font-semibold text-emerald-800 bg-emerald-100 rounded-full">
-                Trabalho Acadêmico • TADS 2025.1
+                Trabalho Acadêmico • Tecnologia em Análise e Desenvolvimento de Sistemas
               </span>
             </motion.div>
             <motion.h1 variants={fadeInUpVariants} className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
@@ -183,26 +194,10 @@ export default function Home() {
             <motion.p variants={fadeInUpVariants} className="text-xl md:text-2xl text-slate-600 mb-8">
               O alicerce invisível que sustenta o comportamento coletivo e impacta diretamente a gestão de projetos
             </motion.p>
-            <motion.div variants={fadeInUpVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 transition-all duration-300 shadow-md hover:shadow-lg group"
-              >
-                Explorar Conteúdo{" "}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-emerald-200 hover:bg-emerald-50 transition-all duration-300"
-              >
-                Sobre os Autores
-              </Button>
-            </motion.div>
             <motion.div variants={fadeInUpVariants} className="mt-12 text-sm text-slate-500">
               <p>Trabalho apresentado por: Alan, Victor e Guilherme</p>
               <p>Professor: Alcebiades Lobo</p>
-              <p>Data: 01/05/2025</p>
+              <p>Data: 19/05/2025</p>
             </motion.div>
           </motion.div>
         </div>
@@ -738,6 +733,294 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
+      <SectionWrapper id="estudos-caso" className="py-16 bg-white">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">Estudos de Caso e Exemplos Práticos</h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-teal-400 mx-auto"></div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden"
+            >
+              <div className="h-2 bg-emerald-500"></div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <CheckCircle2 className="h-6 w-6 text-emerald-500" />
+                  <h3 className="text-xl font-semibold">Google – Inovação como DNA</h3>
+                </div>
+                <p className="text-slate-600 mb-4">
+                  A cultura adhocrática do Google transforma a gestão de projetos em um campo de experimentação. Com a
+                  política "20% do tempo", que permite que funcionários dediquem parte da jornada a projetos pessoais,
+                  nasceram iniciativas como Gmail e Google Maps. Aqui, o fracasso não é punido – é visto como passo
+                  necessário para inovação.
+                </p>
+                <div className="text-xs text-slate-500 italic">
+                  Fonte: Harvard Business Review, "How Google Works", 2021
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden"
+            >
+              <div className="h-2 bg-emerald-500"></div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <CheckCircle2 className="h-6 w-6 text-emerald-500" />
+                  <h3 className="text-xl font-semibold">Toyota – Excelência com Kaizen</h3>
+                </div>
+                <p className="text-slate-600 mb-4">
+                  Na Toyota, projetos não são apenas entregues – são continuamente aprimorados. A cultura que mistura
+                  hierarquia com melhoria contínua resultou em sistemas como o Toyota Production System, onde até o
+                  operário da linha tem voz para sugerir melhorias. O segredo? Padronização que não engessa a
+                  criatividade.
+                </p>
+                <div className="text-xs text-slate-500 italic">
+                  Fonte: MIT Sloan Management Review, "The Toyota Way", 2020
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden"
+            >
+              <div className="h-2 bg-red-500"></div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <X className="h-6 w-6 text-red-500" />
+                  <h3 className="text-xl font-semibold">NHS – O Custo do Desalinhamento</h3>
+                </div>
+                <p className="text-slate-600 mb-4">
+                  O ambicioso projeto de prontuários eletrônicos do serviço de saúde britânico consumiu £10 bilhões
+                  antes de ser abandonado. O erro crucial? Ignorar que hospitais locais valorizavam autonomia acima de
+                  padronização. Um caso clássico onde a tecnologia era viável, mas a cultura não estava preparada.
+                </p>
+                <div className="text-xs text-slate-500 italic">
+                  Fonte: British Journal of Healthcare Management, "NHS Digital Transformation", 2019
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden"
+            >
+              <div className="h-2 bg-emerald-500"></div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <CheckCircle2 className="h-6 w-6 text-emerald-500" />
+                  <h3 className="text-xl font-semibold">Embraer – Transformação Cultural</h3>
+                </div>
+                <p className="text-slate-600 mb-4">
+                  A brasileira Embraer mostrou que até em setores tradicionais a cultura pode evoluir. Ao adotar gestão
+                  de projetos ágil em engenharia aeronáutica, provou que é possível manter rigor técnico enquanto
+                  incentiva inovação – desde que a mudança cultural seja gradual e bem liderada.
+                </p>
+                <div className="text-xs text-slate-500 italic">
+                  Fonte: Project Management Journal, "Agile in Aerospace", 2022
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-10 p-6 bg-slate-50 rounded-xl border border-slate-200"
+          >
+            <p className="text-lg text-slate-700">
+              Estes casos provam que metodologias e cronogramas são importantes, mas é a cultura que determina se as
+              melhores práticas vão virar rotina ou apenas PowerPoint esquecido. Grandes empresas não impõem modelos –
+              cultivam ecossistemas onde projetos florescem naturalmente.
+            </p>
+          </motion.div>
+        </div>
+      </SectionWrapper>
+
+      <SectionWrapper id="estrategias" className="py-16 bg-slate-50">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl font-bold mb-4">
+              Estratégias para Alinhar Cultura Organizacional e Gestão de Projetos
+            </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-teal-400 mx-auto"></div>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white p-8 rounded-xl shadow-xl mb-10"
+            >
+              <p className="text-lg text-slate-600 mb-6">
+                Alinhar a cultura organizacional à gestão de projetos é uma tarefa estratégica que requer sensibilidade,
+                planejamento e ações estruturadas. Esse alinhamento é fundamental para garantir que os projetos não
+                apenas alcancem seus objetivos técnicos e financeiros, mas também estejam em harmonia com os valores,
+                comportamentos e expectativas da organização.
+              </p>
+              <p className="text-lg text-slate-600 mb-6">
+                Projetos que entram em choque com a cultura vigente frequentemente enfrentam resistência, atrasos e
+                falhas de implementação. Por isso, a adoção de estratégias específicas que promovam esse alinhamento
+                torna-se essencial para o sucesso organizacional.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl shadow-md"
+              >
+                <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-emerald-600 font-bold text-xl">1</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Diagnose da Cultura Organizacional</h3>
+                <p className="text-slate-600">
+                  Antes de iniciar qualquer projeto, é importante compreender profundamente a cultura da organização.
+                  Ferramentas como o modelo de Cameron & Quinn, entrevistas e questionários podem mapear valores
+                  predominantes e padrões de comportamento.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl shadow-md"
+              >
+                <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-emerald-600 font-bold text-xl">2</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Capacitação da Liderança</h3>
+                <p className="text-slate-600">
+                  Líderes e gerentes de projeto devem estar preparados para atuar como "agentes de integração cultural",
+                  capazes de mediar as exigências técnicas dos projetos com os valores culturais da organização.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl shadow-md"
+              >
+                <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-emerald-600 font-bold text-xl">3</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Comunicação Clara e Transparente</h3>
+                <p className="text-slate-600">
+                  Ao compartilhar informações relevantes sobre os objetivos, impactos e benefícios dos projetos, os
+                  gestores fortalecem a confiança entre as partes envolvidas e reduzem incertezas.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl shadow-md"
+              >
+                <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-emerald-600 font-bold text-xl">4</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Engajamento dos Stakeholders</h3>
+                <p className="text-slate-600">
+                  Envolver os diferentes públicos afetados pelo projeto desde o início do planejamento é uma forma
+                  eficaz de aumentar o comprometimento e reduzir resistências.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl shadow-md"
+              >
+                <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-emerald-600 font-bold text-xl">5</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Metodologias Compatíveis</h3>
+                <p className="text-slate-600">
+                  Metodologias ágeis podem ser mais bem-sucedidas em culturas flexíveis e inovadoras, enquanto modelos
+                  tradicionais podem se adequar melhor a organizações mais formais e estruturadas.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl shadow-md"
+              >
+                <div className="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center mb-4">
+                  <span className="text-emerald-600 font-bold text-xl">6</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-3">Reforço de Aprendizados Culturais</h3>
+                <p className="text-slate-600">
+                  Criar espaços de feedback, compartilhar boas práticas e reconhecer atitudes alinhadas à cultura
+                  organizacional contribui para consolidar comportamentos desejáveis.
+                </p>
+              </motion.div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-10 p-6 bg-white rounded-xl shadow-md border-l-4 border-emerald-500"
+            >
+              <p className="text-lg text-slate-700">
+                Em síntese, o alinhamento entre cultura organizacional e gestão de projetos não ocorre de forma
+                automática, exigindo estratégias conscientes e ações coordenadas. Quando bem conduzido, esse processo
+                não só potencializa os resultados dos projetos, como também fortalece a identidade organizacional e a
+                capacidade da empresa de se adaptar e evoluir em um ambiente cada vez mais desafiador.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </SectionWrapper>
+
       <SectionWrapper id="conclusao" className="py-16 bg-gradient-to-br from-emerald-50 to-teal-50">
         <div className="container">
           <motion.div
@@ -767,8 +1050,11 @@ export default function Home() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 transition-all duration-300 shadow-md hover:shadow-lg"
+                asChild
               >
-                Baixar Apresentação Completa
+                <a href="/cultura-organizacional.pdf" download>
+                  Baixar Apresentação Completa
+                </a>
               </Button>
             </motion.div>
           </motion.div>
@@ -846,6 +1132,48 @@ export default function Home() {
                   ed.). Jossey-Bass.
                 </p>
               </div>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <p className="text-sm text-slate-700">
+                  <span className="font-medium">CAMERON, Kim S.; QUINN, Robert E. (2011).</span> Diagnosing and Changing
+                  Organizational Culture: Based on the Competing Values Framework. 3. ed. San Francisco: Jossey-Bass.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <p className="text-sm text-slate-700">
+                  <span className="font-medium">CHIAVENATO, Idalberto. (2014).</span> Introdução à Teoria Geral da
+                  Administração. 9. ed. Rio de Janeiro: Elsevier.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <p className="text-sm text-slate-700">
+                  <span className="font-medium">KERZNER, Harold. (2017).</span> Gestão de Projetos: As melhores
+                  práticas. 3. ed. Porto Alegre: Bookman.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <p className="text-sm text-slate-700">
+                  <span className="font-medium">MAXIMIANO, Antônio César Amaru. (2021).</span> Teoria Geral da
+                  Administração: Da revolução urbana à revolução digital. 9. ed. São Paulo: Atlas.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <p className="text-sm text-slate-700">
+                  <span className="font-medium">PMI – Project Management Institute. (2021).</span> Um Guia do
+                  Conhecimento em Gerenciamento de Projetos (Guia PMBOK®). 7. ed. Philadelphia: PMI.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <p className="text-sm text-slate-700">
+                  <span className="font-medium">VALERIANO, Dalton Lopes. (1998).</span> Gerência em Projetos: Pesquisa,
+                  desenvolvimento e engenharia. 2. ed. São Paulo: Makron Books.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-50 rounded-lg">
+                <p className="text-sm text-slate-700">
+                  <span className="font-medium">VERGARA, Sylvia Constant. (2010).</span> Gestão de Pessoas. 3. ed. São
+                  Paulo: Atlas.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -875,11 +1203,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2 group">
                   <div className="h-1 w-1 bg-emerald-500 rounded-full group-hover:w-2 transition-all duration-300"></div>
-                  <span className="group-hover:text-emerald-400 transition-colors duration-300">Victor</span>
+                  <span className="group-hover:text-emerald-400 transition-colors duration-300">Guilherme</span>
                 </li>
                 <li className="flex items-center gap-2 group">
                   <div className="h-1 w-1 bg-emerald-500 rounded-full group-hover:w-2 transition-all duration-300"></div>
-                  <span className="group-hover:text-emerald-400 transition-colors duration-300">Guilherme</span>
+                  <span className="group-hover:text-emerald-400 transition-colors duration-300">Victor</span>
                 </li>
               </ul>
             </div>
@@ -892,11 +1220,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-1 w-1 bg-emerald-500 rounded-full"></div>
-                  <span>Disciplina: ADM e Controle de Projetos</span>
+                  <span>Disciplina: Administração e Controle de Projetos</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-1 w-1 bg-emerald-500 rounded-full"></div>
-                  <span>Data: 01/05/2025</span>
+                  <span>Data: 19/05/2025</span>
                 </li>
               </ul>
             </div>
@@ -922,6 +1250,8 @@ function SectionWrapper({ id, className, children }: { id: string; className?: s
     </section>
   )
 }
+
+// Atualizar a função StatCounter para incluir a fonte
 
 function StatCounter({
   value,
