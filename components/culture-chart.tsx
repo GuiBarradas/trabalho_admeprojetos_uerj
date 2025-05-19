@@ -35,8 +35,11 @@ export function CultureChart() {
 
     const categories = ["Colaboração", "Inovação", "Adaptabilidade", "Comunicação", "Transparência", "Confiança"]
 
-    const collaborativeValues = [0.9, 0.8, 0.85, 0.75, 0.8, 0.9]
-    const hierarchicalValues = [0.5, 0.4, 0.3, 0.6, 0.5, 0.7]
+    // Valores para cada tipo de cultura (em uma escala de 0 a 1)
+    const clanValues = [0.9, 0.8, 0.85, 0.75, 0.8, 0.9] // Cultura de Clã (Colaborativa)
+    const hierarchicalValues = [0.5, 0.4, 0.3, 0.6, 0.5, 0.7] // Cultura Hierárquica (Controladora)
+    const marketValues = [0.7, 0.6, 0.5, 0.8, 0.6, 0.4] // Cultura de Mercado (Competitiva)
+    const adhocraticValues = [0.6, 0.9, 0.9, 0.7, 0.7, 0.5] // Cultura Adhocrática (Inovadora)
 
     ctx.fillStyle = "#ffffff"
     ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -97,7 +100,7 @@ export function CultureChart() {
     ctx.beginPath()
     for (let i = 0; i < categories.length; i++) {
       const angle = (Math.PI * 2 * i) / categories.length - Math.PI / 2
-      const value = collaborativeValues[i]
+      const value = clanValues[i]
       const x = centerX + radius * value * Math.cos(angle)
       const y = centerY + radius * value * Math.sin(angle)
 
@@ -132,10 +135,52 @@ export function CultureChart() {
     ctx.fill()
     ctx.stroke()
 
+    ctx.fillStyle = "rgba(220, 38, 38, 0.2)"
+    ctx.strokeStyle = "#dc2626"
+    ctx.lineWidth = 2
+
+    ctx.beginPath()
+    for (let i = 0; i < categories.length; i++) {
+      const angle = (Math.PI * 2 * i) / categories.length - Math.PI / 2
+      const value = marketValues[i]
+      const x = centerX + radius * value * Math.cos(angle)
+      const y = centerY + radius * value * Math.sin(angle)
+
+      if (i === 0) {
+        ctx.moveTo(x, y)
+      } else {
+        ctx.lineTo(x, y)
+      }
+    }
+    ctx.closePath()
+    ctx.fill()
+    ctx.stroke()
+
+    ctx.fillStyle = "rgba(79, 70, 229, 0.2)"
+    ctx.strokeStyle = "#4f46e5"
+    ctx.lineWidth = 2
+
+    ctx.beginPath()
+    for (let i = 0; i < categories.length; i++) {
+      const angle = (Math.PI * 2 * i) / categories.length - Math.PI / 2
+      const value = adhocraticValues[i]
+      const x = centerX + radius * value * Math.cos(angle)
+      const y = centerY + radius * value * Math.sin(angle)
+
+      if (i === 0) {
+        ctx.moveTo(x, y)
+      } else {
+        ctx.lineTo(x, y)
+      }
+    }
+    ctx.closePath()
+    ctx.fill()
+    ctx.stroke()
+
     ctx.fillStyle = "#10b981"
     for (let i = 0; i < categories.length; i++) {
       const angle = (Math.PI * 2 * i) / categories.length - Math.PI / 2
-      const value = collaborativeValues[i]
+      const value = clanValues[i]
       const x = centerX + radius * value * Math.cos(angle)
       const y = centerY + radius * value * Math.sin(angle)
 
@@ -156,6 +201,30 @@ export function CultureChart() {
       ctx.fill()
     }
 
+    ctx.fillStyle = "#dc2626"
+    for (let i = 0; i < categories.length; i++) {
+      const angle = (Math.PI * 2 * i) / categories.length - Math.PI / 2
+      const value = marketValues[i]
+      const x = centerX + radius * value * Math.cos(angle)
+      const y = centerY + radius * value * Math.sin(angle)
+
+      ctx.beginPath()
+      ctx.arc(x, y, 4, 0, Math.PI * 2)
+      ctx.fill()
+    }
+
+    ctx.fillStyle = "#4f46e5"
+    for (let i = 0; i < categories.length; i++) {
+      const angle = (Math.PI * 2 * i) / categories.length - Math.PI / 2
+      const value = adhocraticValues[i]
+      const x = centerX + radius * value * Math.cos(angle)
+      const y = centerY + radius * value * Math.sin(angle)
+
+      ctx.beginPath()
+      ctx.arc(x, y, 4, 0, Math.PI * 2)
+      ctx.fill()
+    }
+
     const legendX = padding
     const legendY = padding
 
@@ -168,7 +237,7 @@ export function CultureChart() {
     ctx.font = "14px Inter, sans-serif"
     ctx.textAlign = "left"
     ctx.textBaseline = "middle"
-    ctx.fillText("Cultura Colaborativa", legendX + 24, legendY + 8)
+    ctx.fillText("Cultura de Clã (Colaborativa)", legendX + 24, legendY + 8)
 
     ctx.fillStyle = "#64748b"
     ctx.beginPath()
@@ -176,7 +245,23 @@ export function CultureChart() {
     ctx.fill()
 
     ctx.fillStyle = "#334155"
-    ctx.fillText("Cultura Hierárquica", legendX + 24, legendY + 32)
+    ctx.fillText("Cultura Hierárquica (Controladora)", legendX + 24, legendY + 32)
+
+    ctx.fillStyle = "#dc2626"
+    ctx.beginPath()
+    ctx.rect(legendX, legendY + 48, 16, 16)
+    ctx.fill()
+
+    ctx.fillStyle = "#334155"
+    ctx.fillText("Cultura de Mercado (Competitiva)", legendX + 24, legendY + 56)
+
+    ctx.fillStyle = "#4f46e5"
+    ctx.beginPath()
+    ctx.rect(legendX, legendY + 72, 16, 16)
+    ctx.fill()
+
+    ctx.fillStyle = "#334155"
+    ctx.fillText("Cultura Adhocrática (Inovadora)", legendX + 24, legendY + 80)
 
     ctx.fillStyle = "#334155"
     ctx.font = "italic 12px Inter, sans-serif"
@@ -194,7 +279,7 @@ export function CultureChart() {
         className="bg-white p-6 rounded-xl shadow-lg"
       >
         <h3 className="text-xl font-semibold mb-6 text-center">Comparativo de Características Culturais</h3>
-        <div className="h-[400px] w-full">
+        <div className="h-[500px] w-full">
           <canvas ref={canvasRef} className="w-full h-full"></canvas>
         </div>
       </motion.div>
